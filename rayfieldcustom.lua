@@ -1056,10 +1056,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			wait(0.15)
 			TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 0.3}):Play()
 
-			KeyUI.Main.Input.InputBox:GetPropertyChangedSignal('Text'):Connect(function()
-				--KeyUI.Main.Input.HidenInput.Text = string.rep('*', #KeyUI.Main.Input.InputBox.Text)
-			end)
-
 			KeyUI.Main.Input.InputBox.FocusLost:Connect(function()
 				if #KeyUI.Main.Input.InputBox.Text == 0 then return end
 				local KeyFound = false
