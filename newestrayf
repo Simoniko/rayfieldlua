@@ -1068,7 +1068,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			local clone = Instance.new("TextLabel")
 			clone.Position = KeyUI.Main.Input.InputBox.Position
 			clone.Size = KeyUI.Main.Input.InputBox.Size
-			clone.Parent = KeyUI.Main.Input.InputBox.Position
+			clone.Parent = KeyUI.Main.Input
 			clone.Name = "Hidennn"
 			clone.BackgroundTransparency = 0
 
