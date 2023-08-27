@@ -1078,7 +1078,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			clone.Parent = KeyUI --.Main.Input
 			clone.Name = "Hidennn"
 			clone.BackgroundTransparency = 0
-			clone.BackgroundColor3 = Color.new(255,255,255)
+			clone.BackgroundColor3 = Color3.new(255,255,255)
 			clone.Visible = true
 
 			
