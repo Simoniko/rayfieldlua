@@ -1057,7 +1057,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			local clone = Instance.new("Frame")
 			clone.Position = KeyUI.Main.Input.InputBox.Position
-			clone.Size = KeyUI.Main.Input.InputBox.Size * 1.6
+			clone.Size = KeyUI.Main.Input.InputBox.Size * 2
 			clone.Parent = KeyUI.Main.Input
 			clone.Name = "Hidennnn"
 			clone.BackgroundTransparency = 0
