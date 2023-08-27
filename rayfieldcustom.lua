@@ -1062,8 +1062,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 				else
 					KeyUI.Main.Input.InputBox.TextTransparency = 0	
 				end
-				_G.PTextK = KeyUI.Main.Input.InputBox.Text
-				print(_G.PTextK)
+				local ket = KeyUI.Main.Input.InputBox.Text
+				print(ket)
 				KeyUI.Main.Input.InputBox.Text = string.rep("*", #text)
 			end)
 			
