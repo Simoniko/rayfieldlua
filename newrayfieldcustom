@@ -1064,18 +1064,28 @@ function RayfieldLibrary:CreateWindow(Settings)
 			clone.BackgroundTransparency = 0
 			clone.BackgroundColor3 = Color3.new(0,0,0)
 			--]]
+
+			local clone = Instance.new("TextLabel")
+			clone.Position = KeyUI.Main.Input.InputBox.Position
+			clone.Size = KeyUI.Main.Input.InputBox.Size
+			clone.Parent = KeyUI.Main.Input.InputBox.Position
+			clone.Name = "Hidennn"
+			clone.BackgroundTransparency = 0
+
 			
+
 			KeyUI.Main.Input.InputBox:GetPropertyChangedSignal('Text'):Connect(function()
 				local text = KeyUI.Main.Input.InputBox.Text:gsub("%s", "")
 				if #text == 0 then
-					KeyUI.Main.Input.InputBox.TextTransparency = 1
+					--KeyUI.Main.Input.InputBox.TextTransparency = 1
 				else
-					KeyUI.Main.Input.InputBox.TextTransparency = 0
-					KeyUI.Main.Input.InputBox.TextColor3 = Color3.new(0,0,0)
+					--KeyUI.Main.Input.InputBox.TextTransparency = 0
+					KeyUI.Main.Input.InputBox.TextTransparency = 1
+					--KeyUI.Main.Input.InputBox.TextColor3 = Color3.new(0,0,0)
 				end
-				local ket = KeyUI.Main.Input.InputBox.Text
-				print(ket)
-				--KeyUI.Main.Input.InputBox.Text = string.rep("*", #text)
+				--local ket = KeyUI.Main.Input.InputBox.Text
+				--print(ket)
+				KeyUI.Main.Input.Hidennn.Text = string.rep("*", #text)
 			end)
 			
 			KeyUI.Main.Input.InputBox.FocusLost:Connect(function()
