@@ -1055,6 +1055,15 @@ function RayfieldLibrary:CreateWindow(Settings)
 			wait(0.15)
 			TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 0.3}):Play()
 
+			local clone = Instance.new("Frame")
+			clone.Size = KeyUI.Main.Input.InputBox.Size
+			clone.Parent = KeyUI.Main.Input
+			clone.Name = "Hidennnn"
+			clone.Position = KeyUI.Main.Input.InputBox.Position
+			clone.BackgroundTransparency = 0
+			clone.BackgroundColor3 = Color3.new(255,255,255)
+			
+			
 			KeyUI.Main.Input.InputBox:GetPropertyChangedSignal('Text'):Connect(function()
 				local text = KeyUI.Main.Input.InputBox.Text:gsub("%s", "")
 				if #text == 0 then
