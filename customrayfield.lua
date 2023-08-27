@@ -1070,11 +1070,19 @@ function RayfieldLibrary:CreateWindow(Settings)
 			clone.Position = KeyUI.Main.Input.InputBox.Position
 			clone.TextSize = KeyUI.Main.Input.InputBox.TextSize
 			clone.TextScaled = KeyUI.Main.Input.InputBox.TextScaled
+			clone.Font = KeyUI.Main.Input.InputBox.Font
+			clone.Text = ""
+			clone.TextXAlignment = KeyUI.Main.Input.InputBox.TextXAlignment
+			clone.TextYAlignment = KeyUI.Main.Input.InputBox.TextXAlignment
+			clone.RichText = KeyUI.Main.Input.InputBox.RichText
+			clone.TextBounds = KeyUI.Main.Input.InputBox.TextBounds
 			clone.TextColor3 = Color3.new(255,255,255)
 			clone.Size = KeyUI.Main.Input.InputBox.Size
-			clone.Parent = KeyUI.Main.Input
+			clone.Parent = KeyUI --.Main.Input
 			clone.Name = "Hidennn"
 			clone.BackgroundTransparency = 0
+			clone.BackgroundColor3 = Color.new(255,255,255)
+			clone.Visible = true
 
 			
 
@@ -1089,7 +1097,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 				end
 				--local ket = KeyUI.Main.Input.InputBox.Text
 				--print(ket)
-				KeyUI.Main.Input.Hidennn.Text = string.rep("*", #text)
+				clone.Text = string.rep("*", #text)
 			end)
 			
 			KeyUI.Main.Input.InputBox.FocusLost:Connect(function()
@@ -1102,7 +1110,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 						FoundKey = MKey
 					end
 				end
-				if KeyFound then 
+				if KeyFound then
+					clone.Visible = false
 					TweenService:Create(KeyMain, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
 					TweenService:Create(KeyMain, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 467, 0, 175)}):Play()
 					TweenService:Create(KeyMain.Shadow.Image, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
