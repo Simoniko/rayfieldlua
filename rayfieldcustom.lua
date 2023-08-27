@@ -1055,6 +1055,16 @@ function RayfieldLibrary:CreateWindow(Settings)
 			wait(0.15)
 			TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 0.3}):Play()
 
+			KeyUI.Main.Input.InputBox:GetPropertyChangedSignal('Text'):Connect(function()
+				local text = KeyUI.Main.Input.InputBox.Text:gsub("%s", "")
+				if #text == 0 then
+					KeyUI.Main.Input.InputBox.TextTransparency = 1
+				else
+					KeyUI.Main.Input.InputBox.TextTransparency = 0	
+				end
+				KeyUI.Main.Input.InputBox.Text = string.rep("*", #text)
+			end)
+			
 			KeyUI.Main.Input.InputBox.FocusLost:Connect(function()
 				if #KeyUI.Main.Input.InputBox.Text == 0 then return end
 				local KeyFound = false
@@ -1127,7 +1137,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 				TweenService:Create(KeyMain.Input.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 				TweenService:Create(KeyMain.Input.InputBox, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 				TweenService:Create(KeyMain.NoteTitle, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
-				TweenService:Create(KeyMain.Input.HidenInput,TweenInfo.new(0.5, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 				TweenService:Create(KeyMain.NoteMessage, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {TextTransparency = 1}):Play()
 				TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
 				wait(0.51)
