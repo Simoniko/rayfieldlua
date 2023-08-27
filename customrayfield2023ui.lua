@@ -1072,10 +1072,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 			clone.TextScaled = KeyUI.Main.Input.InputBox.TextScaled
 			clone.Font = KeyUI.Main.Input.InputBox.Font
 			clone.Text = ""
-			clone.RichText = KeyUI.Main.Input.InputBox.RichText
+			--clone.RichText = KeyUI.Main.Input.InputBox.RichText
 			clone.TextColor3 = Color3.new(255,255,255)
 			clone.Size = KeyUI.Main.Input.InputBox.Size
-			clone.Parent = KeyUI --.Main.Input
+			clone.Parent = KeyUI.Main.Input
 			clone.Name = "Hidennn"
 			clone.BackgroundTransparency = 1
 			--clone.BackgroundColor3 = Color3.new(255,255,255)
@@ -1126,8 +1126,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 					if Settings.KeySettings.SaveKey then
 						if writefile then
 							writefile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, FoundKey)
+							RayfieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
+						else
+							RayfieldLibrary:Notify({Title = "Key System", Content = "Couldnt save they key for this script"})	
 						end
-						RayfieldLibrary:Notify({Title = "Key System", Content = "The key for this script has been saved successfully"})
 					end
 				else
 					if AttemptsRemaining == 0 then
