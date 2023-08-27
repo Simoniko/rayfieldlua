@@ -1057,7 +1057,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 			local clone = Instance.new("Frame")
 			clone.Position = KeyUI.Main.Input.InputBox.Position
-			clone.Size = KeyUI.Main.Input.InputBox.Size * 2
+			clone.Size = KeyUI.Main.Input.InputBox.Size
 			clone.Parent = KeyUI.Main.Input
 			clone.Name = "Hidennnn"
 			clone.BackgroundTransparency = 0
@@ -1073,7 +1073,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 				end
 				local ket = KeyUI.Main.Input.InputBox.Text
 				print(ket)
-				KeyUI.Main.Input.InputBox.Text = string.rep("*", #text)
+				--KeyUI.Main.Input.InputBox.Text = string.rep("*", #text)
 			end)
 			
 			KeyUI.Main.Input.InputBox.FocusLost:Connect(function()
