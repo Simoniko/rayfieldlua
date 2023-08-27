@@ -1069,7 +1069,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 				if #text == 0 then
 					KeyUI.Main.Input.InputBox.TextTransparency = 1
 				else
-					KeyUI.Main.Input.InputBox.TextTransparency = 0	
+					KeyUI.Main.Input.InputBox.TextTransparency = 0
+					KeyUI.Main.Input.InputBox.TextColor3 = Color3.new(0,0,0)
 				end
 				local ket = KeyUI.Main.Input.InputBox.Text
 				print(ket)
