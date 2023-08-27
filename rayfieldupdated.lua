@@ -1073,7 +1073,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			clone.Font = KeyUI.Main.Input.InputBox.Font
 			clone.Text = ""
 			clone.RichText = KeyUI.Main.Input.InputBox.RichText
-			clone.TextBounds = KeyUI.Main.Input.InputBox.TextBounds
 			clone.TextColor3 = Color3.new(255,255,255)
 			clone.Size = KeyUI.Main.Input.InputBox.Size
 			clone.Parent = KeyUI --.Main.Input
