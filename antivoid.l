@@ -20,7 +20,7 @@ local function OnHumanoidFreeFalling(Active)
 						v.Velocity = Vector3.new(0,0,0)
 					end
 				end
-				Character:SetPrimaryPartCFrame(CFrame.new(0,150,0))
+				Character:SetPrimaryPartCFrame(CFrame.new(0,50,0))
 			end)
 			if Success then
 				HumanoidRootPart.Anchored = false
