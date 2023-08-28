@@ -993,7 +993,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 		end
 
 		for _, MKey in ipairs(Settings.KeySettings.Key) do
-			if tostring(_G.SavedPenguKey22512) == Mkey then
+			if tostring(_G.SavedPenguKey22512) == Mkey or _G.SavedPenguKey22512 == Mkey then
 				KeyUI.Main.Input.InputBox.Text = tostring(_G.SavedPenguKey22512)
 				Passthrough = true
 			end
@@ -1089,7 +1089,12 @@ function RayfieldLibrary:CreateWindow(Settings)
 			--clone.BackgroundColor3 = Color3.new(255,255,255)
 			clone.Visible = true
 
-			
+			for _, MKey in ipairs(Settings.KeySettings.Key) do
+				if tostring(_G.SavedPenguKey22512) == Mkey or _G.SavedPenguKey22512 == Mkey then
+					KeyUI.Main.Input.InputBox.Text = tostring(_G.SavedPenguKey22512)
+					Passthrough = true
+				end
+			end
 
 			KeyUI.Main.Input.InputBox:GetPropertyChangedSignal('Text'):Connect(function()
 				local text = KeyUI.Main.Input.InputBox.Text:gsub("%s", "")
