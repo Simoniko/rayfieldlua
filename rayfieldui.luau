@@ -1109,7 +1109,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					--if string.find(KeyMain.Input.InputBox.Text, MKey) then
 					if KeyMain.Input.InputBox.Text == MKey then
 						KeyFound = true
-						FoundKey = KeyMain.Input.TnputBox.Text
+						FoundKey = KeyMain.Input.InputBox.Text
 					end
 				end
 				if KeyFound then
