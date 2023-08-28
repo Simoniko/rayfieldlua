@@ -1107,7 +1107,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 				local FoundKey = ''
 				for _, MKey in ipairs(Settings.KeySettings.Key) do
 					--if string.find(KeyMain.Input.InputBox.Text, MKey) then
-					if KeyMain.Input.TnputBox.Text == MKey then
+					if KeyMain.Input.InputBox.Text == MKey then
 						KeyFound = true
 						FoundKey = KeyMain.Input.TnputBox.Text
 					end
