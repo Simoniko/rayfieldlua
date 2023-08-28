@@ -988,11 +988,14 @@ function RayfieldLibrary:CreateWindow(Settings)
 				if string.find(readfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension), MKey) then
 					Passthrough = true
 				end
-				if _G.SavedPenguKey22512 == Mkey then
-			    		Passthrough = true
-				end
 			end
 			
+		end
+
+		for _, MKey in ipairs(Settings.KeySettings.Key) do
+			if _G.SavedPenguKey22512 == Mkey then
+				Passthrough = true
+			end
 		end
 
 		if not Passthrough then
