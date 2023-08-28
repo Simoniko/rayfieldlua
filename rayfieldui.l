@@ -988,7 +988,11 @@ function RayfieldLibrary:CreateWindow(Settings)
 				if string.find(readfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension), MKey) then
 					Passthrough = true
 				end
+				if _G.SavedPenguKey22512 == Mkey then
+			    		Passthrough = true
+				end
 			end
+			
 		end
 
 		if not Passthrough then
@@ -1102,9 +1106,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 				local KeyFound = false
 				local FoundKey = ''
 				for _, MKey in ipairs(Settings.KeySettings.Key) do
-					if string.find(KeyMain.Input.InputBox.Text, MKey) then
+					--if string.find(KeyMain.Input.InputBox.Text, MKey) then
+					if KeyMain.Input.TnputBox.Text == MKey then
 						KeyFound = true
-						FoundKey = MKey
+						FoundKey = KeyMain.Input.TnputBox.Text
 					end
 				end
 				if KeyFound then
@@ -1123,6 +1128,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
 					wait(0.51)
 					Passthrough = true
+					_G.SavedPenguKey22512 = FoundKey
 					if Settings.KeySettings.SaveKey then
 						if writefile then
 							writefile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, FoundKey)
