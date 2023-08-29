@@ -992,13 +992,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			
 		end
 
-		for _, MKey in ipairs(Settings.KeySettings.Key) do
-			if tostring(_G.SavedPenguKey22512) == Mkey or _G.SavedPenguKey22512 == Mkey then
-				KeyUI.Main.Input.InputBox.Text = tostring(_G.SavedPenguKey22512)
-				Passthrough = true
-			end
-		end
-
 		if not Passthrough then
 			local AttemptsRemaining = math.random(2,6)
 			Rayfield.Enabled = false
@@ -1089,13 +1082,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 			--clone.BackgroundColor3 = Color3.new(255,255,255)
 			clone.Visible = true
 
-			for _, MKey in ipairs(Settings.KeySettings.Key) do
-				if tostring(_G.SavedPenguKey22512) == Mkey or _G.SavedPenguKey22512 == Mkey then
-					KeyUI.Main.Input.InputBox.Text = tostring(_G.SavedPenguKey22512)
-					Passthrough = true
-				end
-			end
-
 			KeyUI.Main.Input.InputBox:GetPropertyChangedSignal('Text'):Connect(function()
 				local text = KeyUI.Main.Input.InputBox.Text:gsub("%s", "")
 				if #text == 0 then
@@ -1137,7 +1123,6 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(KeyMain.Hide, TweenInfo.new(0.4, Enum.EasingStyle.Quint), {ImageTransparency = 1}):Play()
 					wait(0.51)
 					Passthrough = true
-					_G.SavedPenguKey22512 = FoundKey
 					if Settings.KeySettings.SaveKey then
 						if writefile then
 							writefile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension, FoundKey)
