@@ -2466,8 +2466,10 @@ Topbar.ChangeSize.MouseButton1Click:Connect(function()
 		Minimise()
 	end
 end)
-
---[[
+while wait() do
+Debounce = true
+end
+Debounce = true
 Topbar.Hide.MouseButton1Click:Connect(function()
 	if Debounce then return end
 	if Hidden then
