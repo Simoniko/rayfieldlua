@@ -2466,10 +2466,7 @@ Topbar.ChangeSize.MouseButton1Click:Connect(function()
 		Minimise()
 	end
 end)
-while wait() do
-Debounce = true
-end
-Debounce = true
+
 Topbar.Hide.MouseButton1Click:Connect(function()
 	if Debounce then return end
 	if Hidden then
@@ -2481,7 +2478,7 @@ Topbar.Hide.MouseButton1Click:Connect(function()
 		Hide()
 	end
 end)
---]]
+
 
 UserInputService.InputBegan:Connect(function(input, processed)
 	if (input.KeyCode == Enum.KeyCode.LeftControl and not processed) then
