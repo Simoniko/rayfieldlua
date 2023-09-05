@@ -8,7 +8,7 @@ shlex | Designing + Programming
 iRay  | Programming
 
 ]]
-
+pcall(function()
 
 
 local Release = "Beta 8"
@@ -2524,3 +2524,4 @@ end
 task.delay(3.5, RayfieldLibrary.LoadConfiguration, RayfieldLibrary)
 
 return RayfieldLibrary
+end)
