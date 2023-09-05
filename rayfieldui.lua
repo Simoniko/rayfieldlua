@@ -266,8 +266,10 @@ local function SaveConfiguration()
 		else
 			Data[i] = v.CurrentValue or v.CurrentKeybind or v.CurrentOption or v.Color
 		end
-	end	
+	end
+	pcall(function()
 	writefile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension, tostring(HttpService:JSONEncode(Data)))
+	end)
 end
 
 local neon = (function() -- Open sourced neon module
