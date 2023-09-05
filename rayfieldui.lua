@@ -305,7 +305,7 @@ local neon = (function() -- Open sourced neon module
 		local id = 0
 		function GenUid()
 			id = id + 1
-			return 'neon::'..tostring(id)
+			return "neon::"..tostring(id)
 		end
 	end
 
@@ -2299,7 +2299,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			if not SliderSettings.Suffix then
 				Slider.Main.Information.Text = tostring(SliderSettings.CurrentValue)
 			else
-				Slider.Main.Information.Text = tostring(SliderSettings.CurrentValue) .. " " .. SliderSettings.Suffix
+				Slider.Main.Information.Text = tostring(SliderSettings.CurrentValue)-- .. " " .. SliderSettings.Suffix
 			end
 
 
