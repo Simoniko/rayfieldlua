@@ -8,7 +8,6 @@ shlex | Designing + Programming
 iRay  | Programming
 
 ]]
-pcall(function()
 
 
 local Release = "Beta 8"
@@ -300,7 +299,7 @@ local neon = (function() -- Open sourced neon module
 	local root = Instance.new('Folder', RootParent)
 	root.Name = 'neon'
 
-
+	pcall(function()
 	local GenUid; do
 		local id = 0
 		function GenUid()
@@ -308,6 +307,7 @@ local neon = (function() -- Open sourced neon module
 			return "neon::"..tostring(id)
 		end
 	end
+	end)
 
 	local DrawQuad; do
 		local acos, max, pi, sqrt = math.acos, math.max, math.pi, math.sqrt
@@ -391,8 +391,10 @@ local neon = (function() -- Open sourced neon module
 		if binds[frame] then
 			return binds[frame].parts
 		end
-
+		local uid
+		pcall(function()
 		local uid = GenUid()
+		end)
 		local parts = {}
 		local f = Instance.new('Folder', root)
 		f.Name = frame.Name
@@ -2524,4 +2526,3 @@ end
 task.delay(3.5, RayfieldLibrary.LoadConfiguration, RayfieldLibrary)
 
 return RayfieldLibrary
-end)
