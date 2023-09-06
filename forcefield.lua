@@ -16,7 +16,7 @@ pcall(function()
         local script1signal = script1.Changed
         for i, connection in next, getconnections(script1signal) do
             connection:Disable()
-        end
+        end 
         end
 
         if playerscripts:FindFirstChild"LocalScript2" then
