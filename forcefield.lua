@@ -1,5 +1,5 @@
 pcall(function()    
-        LPH_JIT_MAX(function()
+        LPH_JIT_MAX(function() 
                 local old
                 old = hookmetamethod(game, "__namecall", function(...)
                     if getnamecallmethod() == "Kick" then 
